@@ -10,12 +10,12 @@ const authRoutes = require("./routes/Auth.route");
 const dashboardRoutes = require("./routes/Dashboard.route");
 
 // database connection
-require("./configs/mongodb.config");
+const mongoConnect=require("./configs/mongodb.config");
+mongoConnect();
 
 //redis connection
 require("./configs/redis.config");
-
-const port = process.env.PORT || 8080;
+const port = 8080;
 
 // middlewares
 app.use(express.json());

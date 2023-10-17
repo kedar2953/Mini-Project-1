@@ -27,6 +27,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const submitHandler = (data) => {
+    console.log("data");
     console.log(data);
     axiosInstance
       .post("auth/account", data)

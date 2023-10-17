@@ -1,6 +1,8 @@
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
 # from selenium.webdriver.common.keys import Keys
+#https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
+
 import os
 import time
 import requests
@@ -56,4 +58,4 @@ with open("out.csv", "w", newline="") as f:
 
 # print(wd.page_source)
 # time.sleep(1)
-wd.quit()
+# wd.quit()

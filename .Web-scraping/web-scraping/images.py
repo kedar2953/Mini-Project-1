@@ -6,7 +6,7 @@ from PIL import Image
 import time
 import os
 
-# please set path to chrome or firefox
+#  set path to chrome or firefox
 # PATH = r"C:/chromedriver_win32/chromedriver.exe"
 
 

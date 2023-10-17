@@ -22,7 +22,9 @@ const cookieOptions = {
 
 const register = async (req, res, next) => {
   try {
+    console.log(req.body);
     let result = await registerSchema.validateAsync(req.body);
+    
 
     const existingUser = await User.findOne({
       $or: [
@@ -56,17 +58,20 @@ const register = async (req, res, next) => {
     const avatar = `https://ui-avatars.com/api/?background=random&name=${result.firstName}%20${result.lastName}&size=128&format=svg`;
 
     const user = new User({...result, avatar});
+    console.log(user);
     let savedUser = await user.save();
 
     const accessToken = await signJWT({ userId: savedUser._id });
+    console.log("This is access token",accessToken);
 
-    await redisClient.set(savedUser._id, accessToken, { EX: maxAge / 10 }); // value is in seconds be careful!!
+    // await redisClient.set(savedUser._id, accessToken, { EX: maxAge / 10 }); // value is in seconds be careful!!
 
     // removing secret data
     savedUser = savedUser.toObject();
     delete savedUser.password;
     delete savedUser._id;
 
+    console.log("This is saved user",savedUser);
     return res
       .cookie("accessToken", accessToken, cookieOptions)
       .status(201)

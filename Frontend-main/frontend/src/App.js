@@ -56,7 +56,10 @@ function App() {
         <div className="col p-0 m-0 w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+
+            {/* comment out later  */}
+            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+            
             <Route path="/auth" element={<Auth />} />
             {user ? (
               <Route path="/disease-detection" element={<DiseaseDetection />} />

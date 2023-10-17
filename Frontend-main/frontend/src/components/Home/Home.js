@@ -1,6 +1,7 @@
 import InfoSection from "./InfoSection/InfoSection";
 import { homeObjOne, homeObjTwo, homeObjThree } from "./InfoSection/Data";
-import bg1 from "../../assets/images/HomePage/smart-agriculture-iot-with-hand-planting-tree-background.jpg";
+import bg1 from "../../assets/images/HomePage/download.jpeg";
+
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
@@ -73,7 +74,7 @@ const Home = () => {
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 height: "700px",
-                backgroundRepeat: "no-repeat",
+                // backgroundRepeat: "no-repeat",
               }}
             ></div>
           </div>
