@@ -58,7 +58,7 @@ function App() {
             <Route path="/" element={<Home />} />
 
             {/* comment out later  */}
-            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+            <Route path="/dashboard" element={<Dashboard />} />
             
             <Route path="/auth" element={<Auth />} />
             {user ? (
