@@ -17,9 +17,12 @@ plant_schema = {
         "thumbnail":{
             "type": "string",
         },
-        "diseases":[
-            "bsonType":"string"
-        ]
+       "diseases": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
     },
     # "required": ["email", "password"],
     "additionalProperties": False

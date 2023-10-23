@@ -5,7 +5,7 @@ import { useTranslation, Trans } from "react-i18next";
 import LoadingBar from "react-top-loading-bar";
 import { BsSearch } from "react-icons/bs";
 import { IoReloadOutline } from "react-icons/io5";
-
+import axios from 'axios'
 const DiseaseDetection = () => {
   const { t, i18n } = useTranslation();
 
@@ -107,8 +107,8 @@ const DiseaseDetection = () => {
     var data = new FormData();
 
     data.append("image", imageUploaded);
-    axiosInstance
-      .post("/dl/detection", data, {
+    axios
+      .post("http://localhost:5000/api/dl/detection", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

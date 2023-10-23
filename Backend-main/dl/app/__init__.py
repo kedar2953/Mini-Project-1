@@ -24,7 +24,7 @@ def create_app():
     app.register_blueprint(blueprint)
     app.json_encoder = JSONEncoder
     # app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-    app.config["MONGO_URI"] = "mongodb+srv://fasalmitra:fasalmitra2022@cluster0.k8bxu.mongodb.net/mainDB?retryWrites=true&w=majority"
+    app.config["MONGO_URI"] = "mongodb://127.0.0.1:27017/MiniProj1"
     app.config['CORS_RESOURCES'] = {r"*": {"origins": "http://localhost:3000"}}
     from app.db_config import mongo
     CORS(app, supports_credentials=True)
